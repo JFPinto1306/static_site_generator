@@ -1,9 +1,11 @@
 from textnode import *
 from htmlnode import *
+from copy_to_public import *
 
+
+# Not because it is easy, but because it is hard
 
 
 def main():
-        node = TextNode("This is some anchor text",TextType.LINK,"https://www.boot.dev")
-        print(node)
+        copy_to_public()
 main()
