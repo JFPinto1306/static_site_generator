@@ -1,6 +1,5 @@
 from textnode import *
 from htmlnode import *
-from main import *
 from regexes import *
 
 def text_node_to_html_node(text_node):

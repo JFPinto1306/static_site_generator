@@ -26,16 +26,23 @@ class LeafNode(HTMLNode):
         self.children = None
         
     def to_html(self):
+        if self.tag == "img":
+            # Build attributes (props) and return a self-closing <img> tag
+            props_string = " ".join(f'{key}="{value}"' for key, value in self.props.items())
+            return f"<{self.tag} {props_string}>"
         if self.value:
             if not self.tag:
                 return self.value
             
             if self.props:
-                
                 return "<"+self.tag+" "+self.props_to_html()+">"+self.value+"</"+self.tag+">"
 
             return "<"+self.tag+">"+self.value+"</"+self.tag+">"
-            
+        
+        if self.value is None:
+            print(f"Debug: Leaf node without value encountered! Node properties: {self.__dict__}")
+            raise ValueError('All leaf nodes must have a value')
+        ...  
         raise ValueError('All leaf nodes must have a value')
 
 
