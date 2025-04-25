@@ -25,8 +25,8 @@ def generate_page(basepath,from_path, template_path, dest_path):
     template = template.replace("{{ Content }}", html_string)
     
     # Replacing basepath
-    template = template.replace('href="/', f'href="{basepath}')
-    template = template.replace('src="/', f'src="{basepath}')
+    template = template.replace('href="/', 'href="' + basepath)
+    template = template.replace('src="/', 'src="' + basepath)
     
     # Writing full HTML page to dest path
     with open(dest_path, 'w', encoding='utf-8') as dest_file:

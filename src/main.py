@@ -15,6 +15,6 @@ if len(sys.argv) > 1:
         
 
 def main():
-        copy_to_public()
+        copy_to_public(dest = './docs')
         generate_pages_recursive(basepath,"./content", "./template.html", "./docs")
 main()

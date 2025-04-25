@@ -1,7 +1,7 @@
 import os
 import shutil
 
-def copy_to_public(dest = 'public',src = r'static'):
+def copy_to_public(dest,src = r'static'):
         # Removing any trees from inside the destination
         if os.path.exists(dest):
                 shutil.rmtree(dest)
