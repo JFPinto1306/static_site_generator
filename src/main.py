@@ -6,11 +6,12 @@ from recursive_pages import *
 import sys
 # Not because it is easy, but because it is hard
 
+# Default basepath
 basepath = '/'
 
-if sys.argv:
-        basepath = sys.argv[0]
-        
+# Check if command-line arguments were provided
+if len(sys.argv) > 1:
+    basepath = sys.argv[1]  # The first argument is at index 1, not 0
         
 
 def main():
